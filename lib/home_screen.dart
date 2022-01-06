@@ -74,16 +74,6 @@ class HomeScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20.0),
                         borderSide: BorderSide.none,
                       )
-                      // enabledBorder: const OutlineInputBorder(
-                      //   borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                      //   borderSide: BorderSide(
-                      //     color: Colors.grey,
-                      //   ),
-                      // ),
-                      // focusedBorder: OutlineInputBorder(
-                      //   borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                      //   borderSide: BorderSide(color: Color(0xFF009b65)),
-                      // ),
                     ),
                   ),
                 ),
@@ -93,11 +83,11 @@ class HomeScreen extends StatelessWidget {
               child: Row(
                 children: [
                   Container(
-                    padding: EdgeInsets.only(left: 30, top: 50),
+                    padding: EdgeInsets.only(left: 30, top: 40),
                     child: Text("Recommend", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 23),),
                   ),
                   Container(
-                    padding: EdgeInsets.only(left: 150, top: 50),
+                    padding: EdgeInsets.only(left: 150, top: 40),
                     child: SizedBox(
                       height: 38,
                       width: 80,
@@ -134,11 +124,11 @@ class HomeScreen extends StatelessWidget {
               child: Row(
                 children: [
                   Container(
-                    padding: EdgeInsets.only(left: 30, top: 50),
+                    padding: EdgeInsets.only(left: 30, top: 40),
                     child: Text("Featured Plants", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 23),),
                   ),
                   Container(
-                    padding: EdgeInsets.only(left: 115, top: 50),
+                    padding: EdgeInsets.only(left: 115, top: 40),
                     child: SizedBox(
                       height: 38,
                       width: 80,

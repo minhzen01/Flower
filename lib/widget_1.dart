@@ -18,55 +18,64 @@ class Widget_1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Column(
-        children: [
+      padding: EdgeInsets.only(left: 20),
+      height: 250,
+      child: Stack(
+        children: <Widget>[
           Container(
-            // padding: EdgeInsets.only(left: 30),
-            // width: 200,
-            // color: Colors.black,
-            child: Column(
-              children: [
-                InkWell(
-                  onTap: (){
-                    Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => ImageDetail(linkPic: linkPic, detail: namePic)));
-                  },
-                  child: Container(
-                    child: Hero(
-                      tag: '$linkPic',
-                      child: Image.asset(
-                        '$linkPic',
-                        height: 210,
-                      ),
-                    ),
+            child: InkWell(
+              onTap: (){
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => ImageDetail(linkPic: linkPic, detail: namePic)));
+              },
+              child: Container(
+                child: Hero(
+                  tag: '$linkPic',
+                  child: Image.asset(
+                    '$linkPic',
+                    height: 210,
+                    fit: BoxFit.cover,
                   ),
                 ),
-                Container(
-                  child: Row(
-                    children: [
-                      Container(
-                        padding: EdgeInsets.only(top: 5),
-                        child: Column(
-                          children: [
-                            Container(
-                              padding: EdgeInsets.only(right: 10),
-                              child: Text("$namePic"),
-                            ),
-                            Container(
-                              padding: EdgeInsets.only(right: 30),
-                              child: Text("$location", style: TextStyle(color: Color(0xFF009b65)),),
-                            ),
-                          ],
-                        ),
+              ),
+            ),
+          ),
+          Positioned(
+            left: 0.0,
+            top: 208.0,
+            child: ClipRRect(
+              borderRadius: BorderRadius.only(
+                  bottomRight: Radius.circular(20),
+                  bottomLeft: Radius.circular(20),
+              ),
+              child: Container(
+                width: 178,
+                height: 40,
+                color: Colors.white,
+                child: Row(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.only(top: 5),
+                      child: Column(
+                        children: [
+                          Container(
+                            padding: EdgeInsets.only(right: 10, left: 5),
+                            child: Text("$namePic"),
+                          ),
+                          Container(
+                            padding: EdgeInsets.only(right: 20),
+                            child: Text("$location", style: TextStyle(color: Color(0xFF009b65)),),
+                          ),
+                        ],
                       ),
-                      Container(
-                        padding: EdgeInsets.only(left: 30),
-                        child: Text('\$$price', style: TextStyle(color: Color(0xFF009b65), fontWeight: FontWeight.bold),),
-                      )
-                    ],
-                  ),
-                )
-              ],
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(left: 45),
+                      child: Text('\$$price', style: TextStyle(color: Color(0xFF009b65), fontWeight: FontWeight.bold),),
+                    )
+                  ],
+                ),
+              ),
             ),
           ),
         ],
