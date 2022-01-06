@@ -1,3 +1,5 @@
+import 'package:flower/widget_1.dart';
+import 'package:flower/widget_2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -118,48 +120,56 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             SingleChildScrollView(
+              padding: EdgeInsets.only(top: 10),
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  Widget_1(linkPic: 'images/image_1.png', namePic: 'SAMANTHA', location: 'RUSSIA', price: '440'),
+                  Widget_1(linkPic: 'images/image_2.png', namePic: 'ANGELICA', location: 'RUSSIA', price: '440'),
+                  Widget_1(linkPic: 'images/image_3.png', namePic: 'SAMANTHA', location: 'RUSSIA', price: '440'),
+                ],
+              ),
+            ),
+            Container(
               child: Row(
                 children: [
                   Container(
-                    // padding: EdgeInsets.only(left: 30),
-                    // width: 200,
-                    // color: Colors.black,
-                    child: Column(
-                      children: [
-                        Image.asset(
-                          'images/image_1.png',
-                          width: 200,
-                          height: 200,
+                    padding: EdgeInsets.only(left: 30, top: 50),
+                    child: Text("Featured Plants", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 23),),
+                  ),
+                  Container(
+                    padding: EdgeInsets.only(left: 115, top: 50),
+                    child: SizedBox(
+                      height: 38,
+                      width: 80,
+                      child: TextButton(
+                        child: Text("More", style: TextStyle(color: Colors.white),),
+                        style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xFF009b65)),
+                            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30.0),
+                                  // side: BorderSide(color: Colors.grey)
+                                )
+                            )
                         ),
-                        Container(
-                          child: Row(
-                            children: [
-                              Container(
-                                child: Column(
-                                  children: [
-                                    Container(
-                                      padding: EdgeInsets.only(right: 45, top: 10),
-                                      child: Text("SAMANTHA"),
-                                    ),
-                                    Container(
-                                      padding: EdgeInsets.only(right: 75),
-                                      child: Text("RUSSIA", style: TextStyle(color: Color(0xFF009b65)),),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                child: Text('440', style: TextStyle(color: Color(0xFF009b65), fontWeight: FontWeight.bold),),
-                              )
-                            ],
-                          ),
-                        )
-                      ],
+                        onPressed: () {
+                        },
+                      ),
                     ),
                   ),
                 ],
               ),
             ),
+            SingleChildScrollView(
+              padding: EdgeInsets.only(top: 10),
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  Widget_2(linkPic: 'images/bottom_img_1.png'),
+                  Widget_2(linkPic: 'images/bottom_img_2.png'),
+                ],
+              ),
+            )
           ],
         ),
       ),
