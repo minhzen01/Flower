@@ -12,8 +12,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: new ThemeData(scaffoldBackgroundColor: Colors.white70),
-      home: BottomNavigation(),
+      theme: ThemeData(scaffoldBackgroundColor: Colors.white70),
+      home: const BottomNavigation(),
     );
   }
 }

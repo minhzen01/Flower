@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ImageDetail extends StatefulWidget {
-  final linkPic;
-  final detail;
+  final String linkPic;
+  final String? detail;
 
   const ImageDetail({Key? key,
   required this.linkPic,
@@ -19,7 +19,7 @@ class _ImageDetailState extends State<ImageDetail> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
+            SizedBox(
               width: MediaQuery.of(context).size.width,
               child: InkWell(
                 onTap: (){
@@ -27,19 +27,17 @@ class _ImageDetailState extends State<ImageDetail> {
                 },
                 child: Hero(
                   tag: widget.linkPic,
-                  child: Container(
-                    child: Image.asset(
-                      '${widget.linkPic}',
-                      width: MediaQuery.of(context).size.width,
-                      fit: BoxFit.fill,
-                    ),
+                  child: Image.asset(
+                    widget.linkPic,
+                    width: MediaQuery.of(context).size.width,
+                    fit: BoxFit.fill,
                   ),
                 ),
               ),
             ),
             Container(
-              padding: EdgeInsets.only(top: 15),
-              child: Text(widget.detail != null ? "${widget.detail}" : " ", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25, color: Color(0xFF009b65)),)
+              padding: const EdgeInsets.only(top: 15),
+              child: Text(widget.detail != null ? "${widget.detail}" : " ", style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 25, color: Color(0xFF009b65)),)
               // child: Text("${widget.detail}", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),),
             ),
           ],

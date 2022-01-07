@@ -26,38 +26,36 @@ class HomeScreen extends StatelessWidget {
           children: [
             Stack(
               children: [
-                Container(
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.only(
-                        bottomRight: Radius.circular(25),
-                        bottomLeft: Radius.circular(25)
-                    ),
-                    child: Container(
-                      width: MediaQuery.of(context).size.width,
-                      height: 100,
-                      color: Color(0xFF009b65),
-                      child: Row(
-                        children: [
-                          Container(
-                            padding: EdgeInsets.only(top: 10, left: 25),
-                            alignment: Alignment.topRight,
-                            child: Text("Hi Uishopy!", style: TextStyle(backgroundColor: Color(0xFF009b65), color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold),),
+                ClipRRect(
+                  borderRadius: const BorderRadius.only(
+                      bottomRight: Radius.circular(25),
+                      bottomLeft: Radius.circular(25)
+                  ),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 100,
+                    color: const Color(0xFF009b65),
+                    child: Row(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.only(top: 10, left: 25),
+                          alignment: Alignment.topRight,
+                          child: const Text("Hi Uishopy!", style: TextStyle(backgroundColor: Color(0xFF009b65), color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold),),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(left: 190, bottom: 40),
+                          child: Image.asset(
+                            'images/logo.png',
+                            width: 60,
+                            height: 60,
                           ),
-                          Container(
-                            padding: EdgeInsets.only(left: 190, bottom: 40),
-                            child: Image.asset(
-                              'images/logo.png',
-                              width: 60,
-                              height: 60,
-                            ),
-                          )
-                        ],
-                      ),
+                        )
+                      ],
                     ),
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.only(left: 25, right: 25, top: 75),
+                  padding: const EdgeInsets.only(left: 25, right: 25, top: 75),
                   child: TextField(
                     decoration: InputDecoration(
                       filled: true,
@@ -69,7 +67,7 @@ class HomeScreen extends StatelessWidget {
                           fit: BoxFit.scaleDown
                       ),
                       hintText: "Search",
-                      hintStyle: TextStyle(color: Color(0xFF009b65)),
+                      hintStyle: const TextStyle(color: Color(0xFF009b65)),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20.0),
                         borderSide: BorderSide.none,
@@ -79,84 +77,80 @@ class HomeScreen extends StatelessWidget {
                 ),
               ],
             ),
-            Container(
-              child: Row(
-                children: [
-                  Container(
-                    padding: EdgeInsets.only(left: 30, top: 40),
-                    child: Text("Recommend", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 23),),
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(left: 150, top: 40),
-                    child: SizedBox(
-                      height: 38,
-                      width: 80,
-                      child: TextButton(
-                        child: Text("More", style: TextStyle(color: Colors.white),),
-                        style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xFF009b65)),
-                            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(30.0),
-                                  // side: BorderSide(color: Colors.grey)
-                                )
-                            )
-                        ),
-                        onPressed: () {
-                        },
+            Row(
+              children: [
+                Container(
+                  padding: const EdgeInsets.only(left: 30, top: 40),
+                  child: const Text("Recommend", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 23),),
+                ),
+                Container(
+                  padding: const EdgeInsets.only(left: 150, top: 40),
+                  child: SizedBox(
+                    height: 38,
+                    width: 80,
+                    child: TextButton(
+                      child: const Text("More", style: TextStyle(color: Colors.white),),
+                      style: ButtonStyle(backgroundColor: MaterialStateProperty.all(const Color(0xFF009b65)),
+                          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30.0),
+                                // side: BorderSide(color: Colors.grey)
+                              )
+                          )
                       ),
+                      onPressed: () {
+                      },
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
             SingleChildScrollView(
-              padding: EdgeInsets.only(top: 10),
+              padding: const EdgeInsets.only(top: 10),
               scrollDirection: Axis.horizontal,
               child: Row(
-                children: [
-                  Widget_1(linkPic: 'images/image_1.png', namePic: 'SAMANTHA', location: 'RUSSIA', price: '440'),
-                  Widget_1(linkPic: 'images/image_2.png', namePic: 'ANGELICA', location: 'RUSSIA', price: '440'),
-                  Widget_1(linkPic: 'images/image_3.png', namePic: 'SAMANTHA', location: 'RUSSIA', price: '440'),
+                children: const <Widget>[
+                  Widget1(linkPic: 'images/image_1.png', namePic: 'SAMANTHA', location: 'RUSSIA', price: '440'),
+                  Widget1(linkPic: 'images/image_2.png', namePic: 'ANGELICA', location: 'RUSSIA', price: '440'),
+                  Widget1(linkPic: 'images/image_3.png', namePic: 'SAMANTHA', location: 'RUSSIA', price: '440'),
                 ],
               ),
             ),
-            Container(
-              child: Row(
-                children: [
-                  Container(
-                    padding: EdgeInsets.only(left: 30, top: 40),
-                    child: Text("Featured Plants", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 23),),
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(left: 115, top: 40),
-                    child: SizedBox(
-                      height: 38,
-                      width: 80,
-                      child: TextButton(
-                        child: Text("More", style: TextStyle(color: Colors.white),),
-                        style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xFF009b65)),
-                            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(30.0),
-                                  // side: BorderSide(color: Colors.grey)
-                                )
-                            )
-                        ),
-                        onPressed: () {
-                        },
+            Row(
+              children: [
+                Container(
+                  padding: const EdgeInsets.only(left: 30, top: 40),
+                  child: const Text("Featured Plants", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 23),),
+                ),
+                Container(
+                  padding: const EdgeInsets.only(left: 115, top: 40),
+                  child: SizedBox(
+                    height: 38,
+                    width: 80,
+                    child: TextButton(
+                      child: const Text("More", style: TextStyle(color: Colors.white),),
+                      style: ButtonStyle(backgroundColor: MaterialStateProperty.all(const Color(0xFF009b65)),
+                          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30.0),
+                                // side: BorderSide(color: Colors.grey)
+                              )
+                          )
                       ),
+                      onPressed: () {
+                      },
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
             SingleChildScrollView(
-              padding: EdgeInsets.only(top: 10),
+              padding: const EdgeInsets.only(top: 10),
               scrollDirection: Axis.horizontal,
               child: Row(
-                children: [
-                  Widget_2(linkPic: 'images/bottom_img_1.png'),
-                  Widget_2(linkPic: 'images/bottom_img_2.png'),
+                children: const <Widget>[
+                  Widget2(linkPic: 'images/bottom_img_1.png'),
+                  Widget2(linkPic: 'images/bottom_img_2.png'),
                 ],
               ),
             )
